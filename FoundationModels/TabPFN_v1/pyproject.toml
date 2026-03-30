@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tabpfn_v1"
+version = "0.1.9"
+authors = [
+{name="Noah Hollmann"},
+{name="Samuel Muller", email="muellesa@tf.uni-freiburg.de"},
+{name="Katharina Eggensperger"},
+{name="Frank Hutter"},
+]
+description = "Interface for using TabPFN and library to train TabPFN'"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies=[
+        'torch>=1.9.0',
+        'scikit-learn>=0.24.2',
+        'pyyaml>=5.4.1',
+        'numpy>=1.21.2',
+        'requests>=2.23.0',
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.hatch.build]
+exclude = [
+  "*.cpkt",
+  "tabpfn/datasets/*.pickle",
+]
+
+[project.optional-dependencies]
+full = [
+    'gpytorch>=1.5.0', # training
+    'catboost>=0.26.1', # baselines
+    'auto-sklearn>=0.14.5', # baselines
+    'xgboost>=1.4.0', # baselines
+    'hyperopt>=0.2.5', # baselines
+    'configspace>=0.4.21', # baselins + training + evaluation
+    'openml>=0.12.2', # evaluation + baselines
+    'seaborn==0.11', # evaluation
+    'tqdm>=4.62.1', # training + evaluation
+]
+
+[project.urls]
+"Homepage" = "https://github.com/automl/TabPFN'"

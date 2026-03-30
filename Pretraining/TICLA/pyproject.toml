@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ticla"
+version = "0.0.1"
+description = "A Python package"
+readme = "README.md"
+requires-python = ">=3.8"
+
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+

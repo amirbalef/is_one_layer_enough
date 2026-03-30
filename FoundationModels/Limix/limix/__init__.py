@@ -1,0 +1,1 @@
+from .sklearn.classifier import LimiXClassifier
