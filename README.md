@@ -7,9 +7,9 @@ in-context learning models (TabPFN, TabICL, LimiX, …) across OpenML benchmarks
 
 ## Multiclass Results
 
-Here we provide the results for multiclass problems.
+Here we provide the results for multiclass problems. We use all $8$ multiclass tasks available in TabArena (excluding two datasets due to memory constraints).
 
-### Exp 1. Embedding  Similairty
+### Exp 1. Embedding Similarity
 
 
 <p float="left">
@@ -26,13 +26,12 @@ Here we provide the results for multiclass problems.
 ![Separation Gap Cosine Legend](Assets/Multiclass/c0_separation_gap_TabArena_cosine_legend-1.png)
 
 
-### Exp 3. Probing Clasifier
+### Exp 3. Probing Classifier
 
 <p float="left">
   <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy-1.png" width="84%" />
   <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy_colorbar-1.png" width="10%" />
 </p>
-
 
 
 
@@ -64,6 +63,8 @@ Here we provide the results for multiclass problems.
   <img src="Assets/Multiclass/looped_transformer_per_dataset_c0_roc_auc-1.png" width="42%" />
 </p>
 
+In addition to multiclass tasks available in TabArena, we evaluated the models on $20$ multiclass tasks available in OpenML-CC18.
+
 
 ## Repository structure
 
@@ -71,7 +72,7 @@ Here we provide the results for multiclass problems.
 .
 ├── Experiments/                    # Main experiment code
 │   ├── main.py                     # the main code for saving the results.
-│   ├── fine_tuning_exp.py          # the code for tabular logit lens (pretrained indivudal decoders)
+│   ├── fine_tuning_exp.py          # the code for tabular logit lens (pretrained individual decoders)
 │   ├── util.py                     # some utilities (metrics, preprocessing, probing, …)
 │   ├── configs/                    # Per-model experiment configs.
 │   │   ├── tabpfn_v1/
@@ -94,7 +95,7 @@ Here we provide the results for multiclass problems.
 │   ├── Limix/
 │   ├── Mitra/
 │   ├── NanoTabPFN/
-│   └── weights/                    # Pre-trained model weights and indiviudal decoders weights 
+│   └── weights/                    # Pre-trained model weights and individual decoder weights
 │
 ├── Notebooks/                      # prototyping notebooks
 │
@@ -105,10 +106,11 @@ Here we provide the results for multiclass problems.
 ```
 
 
-# dependecy
+# Dependencies
 
-##  1. Install UV
-install UV:
+## 1. Install UV
+
+Install UV:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -141,7 +143,7 @@ pip install -e FoundationModels/NanoTabPFN
 Place the model checkpoint and fine-tuned decoders weights in `FoundationModels/weights`, to use the models please check the README in  `FoundationModels/`
 
 
-### 3. Install the pretraining  and prior generation package
+### 3. Install the pretraining and prior generation package
 
 ```bash
 pip install -e Pretraining/TICLA
@@ -166,7 +168,7 @@ python main.py \
 ```
 
 
-## Example: pretrainnig individual decoders
+## Example: Pretraining individual decoders
 
 Trains one individual decoder head per transformer layer on synthetic prior
 data.
@@ -185,7 +187,7 @@ python fine_tuning_exp.py \
 |--------|-------------|
 | `c0`   | Default model (baseline) |
 | `c1`   | Representation analysis — probes hidden states at each layer |
-| `c2`   | Layer skipping — omits individual layers during inference |
-| `c3`   | Layer repetition — repeats individual layers during inference |
-| `c4`   | Layer swapping — exchanges layer order during inference |
+| `c2`   | Layer skipping — omits a layer during inference |
+| `c3`   | Layer repetition — repeats a layer during inference |
+| `c4`   | Layer swapping — swap neighboring layers order during inference |
 | `finetuning_decoder` | Trains individual decoder heads per layer on synthetic prior data |
