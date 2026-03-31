@@ -12,9 +12,9 @@ Here we provide the results for multiclass problems. We use all $8$ multiclass t
 ### Exp 1. Embedding Similarity
 
 
-<p float="left">
-  <img src="Assets/Multiclass/c1_TabArena_similarity-1.png" width="88%" />
-  <img src="Assets/Multiclass/c1_TabArena_similarity_colorbar-1.png" width="10%" />
+<p align="center">
+  <img src="Assets/Multiclass/c1_TabArena_similarity-1.png" width="75%" />
+  <img src="Assets/Multiclass/c1_TabArena_similarity_colorbar-1.png" width="8.5%" />
 </p>
 
 
@@ -22,18 +22,21 @@ Here we provide the results for multiclass problems. We use all $8$ multiclass t
 
 ### Exp 2. Separation Gap
 
-![Separation Gap Cosine](Assets/Multiclass/c0_separation_gap_TabArena_cosine-1.png)
-![Separation Gap Cosine Legend](Assets/Multiclass/c0_separation_gap_TabArena_cosine_legend-1.png)
+<p align="center">
+  <img src="Assets/Multiclass/c0_separation_gap_TabArena_cosine-1.png" width="85%" />
+  <img src="Assets/Multiclass/c0_separation_gap_TabArena_cosine_legend-1.png" width="65%" />
+</p>
 
+---
 
 ### Exp 3. Probing Classifier
 
-<p float="left">
-  <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy-1.png" width="84%" />
-  <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy_colorbar-1.png" width="10%" />
+<p align="center">
+  <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy-1.png" width="90%" />
+  <img src="Assets/Multiclass/c1_TabArena_logistic_regression_balanced_accuracy_colorbar-1.png" width="8%" /> &nbsp;&nbsp;
 </p>
 
-
+---
 
 ### Exp 4. Tabular Logit Lens
 
@@ -58,7 +61,7 @@ Here we provide the results for multiclass problems. We use all $8$ multiclass t
 
 ### POC: Is One Layer Enough?
 
-<p float="left">
+<p align="center">
   <img src="Assets/Multiclass/looped_transformer_early_exit_both_c0-1.png" width="55%" />
   <img src="Assets/Multiclass/looped_transformer_per_dataset_c0_roc_auc-1.png" width="42%" />
 </p>
