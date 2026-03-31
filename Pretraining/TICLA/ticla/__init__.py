@@ -1,1 +1,0 @@
-from .sklearn.classifier import TICLAClassifier
