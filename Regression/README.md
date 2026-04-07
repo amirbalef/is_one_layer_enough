@@ -2,13 +2,6 @@
 
 Here we provide the results for regression problems. 
 
-We adapt the experiments as follows:
-* We use all TFMs that support regression (LimiX-2M, LimiX-16M, TabPFN V2, and TabPFN 2.5).
-* We use negative RMSE as the primary performance metric and additionally report Spearman’s rank correlation, which is invariant to calibration.
-* The separation gap experiment is extended to regression by treating regression as a classification problem.
-* We adapt TabICL priors to regression tasks.
-* All six regression tasks in TabArena with fewer than 100 features and 10,000 samples are included, with experiments run using the repetitions and folds specified by TabArena.
-* We evaluate our proof-of-concept model on regression tasks.
 
 ### Exp 1. Embedding Similarity
 
